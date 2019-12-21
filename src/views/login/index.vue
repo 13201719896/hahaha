@@ -102,9 +102,17 @@ export default {
   },
   methods: {
     login () {
-      this.$refs.myForm.validate(function (isOK) {
+      this.$refs.myForm.validate((isOK) => {
         if (isOK) {
-          console.log('校验成功')
+          this.$axios({
+            url: '/authorizations',
+            method: 'post',
+            data: this.loginForm
+          }).then(result => {
+            window.localStorage.setItem('user-token', result.data.data.token)
+          }).catch(() => {
+
+          })
         }
       })
     }
