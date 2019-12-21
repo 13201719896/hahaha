@@ -67,6 +67,7 @@
 </template>
 
 <script>
+// import { homedir } from 'os'
 // export default {
 //   data () {
 //     return {
@@ -110,8 +111,12 @@ export default {
             data: this.loginForm
           }).then(result => {
             window.localStorage.setItem('user-token', result.data.data.token)
+            this.$router.push('/home')
           }).catch(() => {
-
+            this.$message({
+              type: 'warning',
+              message: '手机号或者验证码错了呢我的小宝贝。'
+            })
           })
         }
       })
