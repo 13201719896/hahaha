@@ -3,11 +3,13 @@ import App from './App.vue'
 import router from './router'
 import './styles/index.less'
 import ElementUI from 'element-ui' // 引入UI
+import Component from './components'
 import 'element-ui/lib/theme-chalk/index.css' // 引入样式
 import axios from 'axios'
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
 Vue.use(ElementUI)
+Vue.use(Component)
 axios.defaults.baseURL = 'http://ttapi.research.itcast.cn/mp/v1_0'
 new Vue({
   router,

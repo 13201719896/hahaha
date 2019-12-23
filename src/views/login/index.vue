@@ -44,7 +44,7 @@
              <el-form-item prop="mobile">
                  <!-- 表单域中可以放置各种类型的表单控件，包括 Input、Select、Checkbox、Radio、Switch、DatePicker、TimePicker -->
                  <!-- 手机号 绑定 v-model -->
-                 <el-input v-model="loginForm.mobile" placeholder="请输入手机号"></el-input>
+                 <el-input v-model="loginForm.mobile" placeholder="请输入手机号" ></el-input>
              </el-form-item>
              <el-form-item prop="code">
                  <!-- 验证码 -->
@@ -87,9 +87,9 @@ export default {
     return {
       // 表单数据 是一个对象
       loginForm: {
-        mobile: '', // 手机号
-        code: '', // 验证码
-        agree: false // 是否同意协议
+        mobile: '13911111111', // 手机号
+        code: '246810', // 验证码
+        agree: true // 是否同意协议
       },
       loginRules: {
         mobile: [{ required: true, message: '请输入您的手机号' },
